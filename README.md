@@ -1,0 +1,2 @@
+# zlog
+Initialization for Zerolog
