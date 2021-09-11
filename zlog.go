@@ -35,6 +35,11 @@ func Initialize() {
 		return
 	}
 
+	// Optimize field names
+	zerolog.TimestampFieldName = "t"
+	zerolog.LevelFieldName = "l"
+	zerolog.MessageFieldName = "m"
+
 	output := fig.StringOr("terminal", "log.output")
 	if output == "terminal" && //  user wants terminal
 		!(isatty.IsTerminal(os.Stdout.Fd()) || isatty.IsCygwinTerminal(os.Stdout.Fd())) { // terminal not detected
